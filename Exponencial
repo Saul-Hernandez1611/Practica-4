@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+
+double potencia(double base, int exponente) {
+    double resultado = 1.0;
+    
+    if (exponente == 0) {
+        return 1.0;
+    } else if (exponente > 0) {
+        for (int i = 1; i <= exponente; i++) {
+            resultado *= base;
+        }
+    } else {  // exponente < 0
+        for (int i = 1; i <= -exponente; i++) {
+            resultado /= base;
+        }
+    }
+    
+    return resultado;
+}
+
+int main() {
+    double A;
+    int B;
+    double resultado;
+    
+    printf("Introduce la base (A): ");
+    scanf("%lf", &A);
+    
+    printf("Introduce el exponente (B): ");
+    scanf("%d", &B);
+    
+    resultado = potencia(A, B);
+    
+    printf("El resultado de %.2lf^%d es: %.6lf\n", A, B, resultado);
+    
+    return 0;
+}
